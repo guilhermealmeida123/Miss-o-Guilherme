@@ -14,3 +14,23 @@ const pergunta = [
         alternativas: ["alternativa1","alternativa2"]
     }
 ]
+let atual = 0;
+let perguntaAtual;
+
+function mostrPergunta(){
+    perguntaAtual = pergunta[atual];
+    caixaPerguntas.textContent = perguntaAtual.enunciado;
+    caixaAlternativas.textContent = "";
+    mostraAlternativas();
+}
+function mostraAlternativas(){
+    for(const alternativa of perguntaAtual.alternativas){
+        const botaoAlternativas = document.createElement("button");
+        botaoAlternativas.textContent = alternativa;
+        caixaAlternativas.appendChild(botaoAlternativas);
+    }
+}
+
+mostraPergunta();
+
+function
