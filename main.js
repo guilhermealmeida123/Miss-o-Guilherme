@@ -1,36 +1,23 @@
-const caixaPrincipal = document.querySelector(".caixa-principal")
-const caixaPergunta = document.querySelector(".caixa-principal")
-const caixaalternativa = document.querySelector(".caixa-alternativa")
-const caixaresultado = document.querySelector(".caixa-resultado")
-const caixaresultado = document.querySelector(".caixa-resultado")
+const caixaPrincipal = document.querySelector(".caixa-principal");
+const caixaPerguntas = document.querySelector(".caixa-pergunta");
+const caixaAlternativas = document.querySelector(".caixa-alternativa");
+const caixaResultado = document.querySelector(".caixa-resultado");
+const textoResultado = document.querySelector(".texto-resultado");
 
-const pergunta = [
-    { //primeiro objeto da lista de perguntas
-    enunciado: "pergunta1",
-    alternativas: ["alternativa1", "alternativa2"]
-    }
-    {// segundo objeto da lista de perguntas
-        enunciado: "pergunta2",
-        alternativas: ["alternativa1","alternativa2"]
-    }
-]
-let atual = 0;
-let perguntaAtual;
-
-function mostrPergunta(){
-    perguntaAtual = pergunta[atual];
-    caixaPerguntas.textContent = perguntaAtual.enunciado;
-    caixaAlternativas.textContent = "";
-    mostraAlternativas();
-}
-function mostraAlternativas(){
-    for(const alternativa of perguntaAtual.alternativas){
-        const botaoAlternativas = document.createElement("button");
-        botaoAlternativas.textContent = alternativa;
-        caixaAlternativas.appendChild(botaoAlternativas);
-    }
-}
-
-mostraPergunta();
-
-function
+// Dados das perguntas e alternativas
+const perguntas = [
+  {
+    enunciado: "Qual a melhor maneira de combater o desmatamento?",
+    alternativas: [
+      "Reflorestamento de áreas degradadas",
+      "Implementação de leis mais rigorosas para a proteção das florestas"
+    ]
+  },
+  {
+    enunciado: "Como podemos combater a desigualdade social de forma eficaz e sustentável?",
+    alternativas: [
+      "Implementar programas de educação e formação profissional acessíveis a todos, capacitando indivíduos de comunidades desfavorecidas.",
+      "Políticas de redistribuição de renda e oportunidades, promovendo uma distribuição igual dos recursos e do acesso aos benefícios"
+    ]
+  }
+];
